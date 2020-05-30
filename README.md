@@ -1,4 +1,4 @@
-# learntlist.com [![Build Status](https://travis-ci.com/yuhonas/learntlist.com.svg?branch=master)](https://travis-ci.com/yuhonas/learntlist.com)
+# learntlist.com ![Elixir CI](https://github.com/yuhonas/learntlist.com/workflows/Elixir%20CI/badge.svg)
 
 A dispassionate list of day to day learnings
 

@@ -1,4 +1,7 @@
 defmodule LearntList.Api.LearntItem do
+  @moduledoc """
+  Learnt Item model
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
