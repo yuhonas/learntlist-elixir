@@ -28,6 +28,8 @@ jobs:
     - name: Setup the database
       run: |
         mix do ecto.create, ecto.migrate
+      env:
+        DB_HOST: postgres
     - name: Run Tests
       run: |
         mix test
