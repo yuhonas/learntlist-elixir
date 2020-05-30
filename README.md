@@ -1,4 +1,4 @@
-# learntlist.com ![Elixir CI](https://github.com/yuhonas/learntlist.com/workflows/Elixir%20CI/badge.svg)
+# learntlist.com ![CI](https://github.com/yuhonas/learntlist.com/workflows/CI/badge.svg)
 
 A dispassionate list of day to day learnings
 
