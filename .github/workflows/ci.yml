@@ -31,3 +31,7 @@ jobs:
         mix test
       env:
         DB_HOST: postgres
+    - uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: cover/excoveralls.html
