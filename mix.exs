@@ -10,7 +10,8 @@ defmodule LearntList.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls]
     ]
   end
 
@@ -45,8 +46,10 @@ defmodule LearntList.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
+      {:csv, "~> 2.3"},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
-      {:csv, "~> 2.3"}
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.10", only: :test}
     ]
   end
 
@@ -61,7 +64,8 @@ defmodule LearntList.MixProject do
       setup: ["deps.get", "ecto.setup", "cmd npm install --prefix assets"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["credo", "ecto.create --quiet", "ecto.migrate --quiet", "test"]
+      "test.quality": ["credo", "coveralls"],
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end
 end
