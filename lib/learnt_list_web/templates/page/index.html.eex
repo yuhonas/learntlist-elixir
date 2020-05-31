@@ -20,7 +20,7 @@
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
       <h1 class="display-4 font-weight-normal">Like to Learn?</h1>
-      <p class="lead font-weight-normal">So do we, there's an amazing even daunting amount of information out there, let us help you on your journey</p>
+      <p class="lead font-weight-normal">So do we, there's an amazing and daunting amount of information out there, let us help you navigate it</p>
       <a class="btn btn-outline-secondary" href="#">Coming soon</a>
     </div>
     <div class="product-device box-shadow d-none d-md-block"></div>
@@ -38,7 +38,7 @@
     <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
         <h2 class="display-5">Explore & Gain Insights</h2>
-        <p class="lead">What do you lke to learn, what does it relate too? what else would you be interested in - we'll tell you</p>
+        <p class="lead">What do you lke to learn?, what does it relate too? what else would you be interested in - we'll tell you</p>
       </div>
       <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>

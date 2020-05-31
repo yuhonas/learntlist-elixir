@@ -1,6 +1,6 @@
 # learntlist.com ![CI](https://github.com/yuhonas/learntlist.com/workflows/CI/badge.svg)
 
-A dispassionate list of day to day learnings
+Track, socialize, discover & gain insights into your learning journey
 
 ## Why?
 
