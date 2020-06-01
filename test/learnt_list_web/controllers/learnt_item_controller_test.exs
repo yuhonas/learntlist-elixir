@@ -32,6 +32,13 @@ defmodule LearntListWeb.LearntItemControllerTest do
       conn = get(conn, Routes.learnt_item_path(conn, :index))
       assert json_response(conn, 200)["data"] == []
     end
+
+    test "has the correct CORS response headers", %{conn: conn} do
+      conn = get(conn, Routes.learnt_item_path(conn, :index))
+
+      assert Enum.into(conn.resp_headers, %{}) |>
+        Map.fetch("access-control-allow-origin") == {:ok, "*" }
+    end
   end
 
   describe "create learnt_item" do
