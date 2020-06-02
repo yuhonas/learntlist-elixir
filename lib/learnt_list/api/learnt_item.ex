@@ -18,6 +18,7 @@ defmodule LearntList.Api.LearntItem do
   def changeset(learnt_item, attrs) do
     learnt_item
     |> cast(attrs, [:title, :description, :url, :wikidata_id])
-    |> validate_required([:title, :description, :url, :wikidata_id])
+    |> validate_required([:title, :url])
+    |> unique_constraint([:url, :wikidata_id])
   end
 end
