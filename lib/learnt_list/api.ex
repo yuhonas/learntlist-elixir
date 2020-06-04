@@ -5,6 +5,7 @@ defmodule LearntList.Api do
 
   import Ecto.Query, warn: false
   alias LearntList.Repo
+  alias LearntList.Api.Wikipedia
 
   alias LearntList.Api.LearntItem
 
@@ -52,6 +53,7 @@ defmodule LearntList.Api do
   def create_learnt_item(attrs \\ %{}) do
     %LearntItem{}
     |> LearntItem.changeset(attrs)
+    # |> Wikipedia.set_wikidata_id()
     |> Repo.insert()
   end
 

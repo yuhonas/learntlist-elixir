@@ -30,7 +30,7 @@ defmodule LearntListWeb.LearntItemControllerTest do
   describe "index" do
     test "lists all learnt_items", %{conn: conn} do
       conn = get(conn, Routes.learnt_item_path(conn, :index))
-      assert json_response(conn, 200)["data"] == []
+      assert json_response(conn, 200) == []
     end
 
     test "has the correct CORS response headers", %{conn: conn} do
@@ -44,7 +44,7 @@ defmodule LearntListWeb.LearntItemControllerTest do
   describe "create learnt_item" do
     test "renders learnt_item when data is valid", %{conn: conn} do
       conn = post(conn, Routes.learnt_item_path(conn, :create), learnt_item: @create_attrs)
-      assert %{"id" => id} = json_response(conn, 201)["data"]
+      assert %{"id" => id} = json_response(conn, 201)
 
       conn = get(conn, Routes.learnt_item_path(conn, :show, id))
 
@@ -54,7 +54,7 @@ defmodule LearntListWeb.LearntItemControllerTest do
                "title" => "some title",
                "url" => "some url",
                "wikidata_id" => "some wikidata_id"
-             } = json_response(conn, 200)["data"]
+             } = json_response(conn, 200)
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
@@ -68,7 +68,7 @@ defmodule LearntListWeb.LearntItemControllerTest do
 
     test "renders learnt_item when data is valid", %{conn: conn, learnt_item: %LearntItem{id: id} = learnt_item} do
       conn = put(conn, Routes.learnt_item_path(conn, :update, learnt_item), learnt_item: @update_attrs)
-      assert %{"id" => ^id} = json_response(conn, 200)["data"]
+      assert %{"id" => ^id} = json_response(conn, 200)
 
       conn = get(conn, Routes.learnt_item_path(conn, :show, id))
 
@@ -78,7 +78,7 @@ defmodule LearntListWeb.LearntItemControllerTest do
                "title" => "some updated title",
                "url" => "some updated url",
                "wikidata_id" => "some updated wikidata_id"
-             } = json_response(conn, 200)["data"]
+             } = json_response(conn, 200)
     end
 
     test "renders errors when data is invalid", %{conn: conn, learnt_item: learnt_item} do
