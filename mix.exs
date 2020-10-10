@@ -50,6 +50,7 @@ defmodule LearntList.MixProject do
       {:cors_plug, "~> 2.0"},
       {:httpoison, "~> 1.6"},
       {:poison, "~> 3.1"},
+      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
       {:excoveralls, "~> 0.10", only: :test}
@@ -69,6 +70,7 @@ defmodule LearntList.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       "test.quality": ["credo", "coveralls.html"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
+      # "test.watch": ["test.watch --stale --max-failures 1 --trace --seed 0"],
     ]
   end
 end
