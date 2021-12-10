@@ -28,7 +28,8 @@ defmodule LearntListWeb.LearntItemController do
   def update(conn, %{"id" => id, "learnt_item" => learnt_item_params}) do
     learnt_item = Api.get_learnt_item!(id)
 
-    with {:ok, %LearntItem{} = learnt_item} <- Api.update_learnt_item(learnt_item, learnt_item_params) do
+    with {:ok, %LearntItem{} = learnt_item} <-
+           Api.update_learnt_item(learnt_item, learnt_item_params) do
       render(conn, "show.json", learnt_item: learnt_item)
     end
   end

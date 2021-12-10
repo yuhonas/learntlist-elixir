@@ -36,8 +36,8 @@ defmodule LearntListWeb.LearntItemControllerTest do
     test "has the correct CORS response headers", %{conn: conn} do
       conn = get(conn, Routes.learnt_item_path(conn, :index))
 
-      assert Enum.into(conn.resp_headers, %{}) |>
-        Map.fetch("access-control-allow-origin") == {:ok, "*" }
+      assert Enum.into(conn.resp_headers, %{})
+             |> Map.fetch("access-control-allow-origin") == {:ok, "*"}
     end
   end
 
@@ -66,8 +66,13 @@ defmodule LearntListWeb.LearntItemControllerTest do
   describe "update learnt_item" do
     setup [:create_learnt_item]
 
-    test "renders learnt_item when data is valid", %{conn: conn, learnt_item: %LearntItem{id: id} = learnt_item} do
-      conn = put(conn, Routes.learnt_item_path(conn, :update, learnt_item), learnt_item: @update_attrs)
+    test "renders learnt_item when data is valid", %{
+      conn: conn,
+      learnt_item: %LearntItem{id: id} = learnt_item
+    } do
+      conn =
+        put(conn, Routes.learnt_item_path(conn, :update, learnt_item), learnt_item: @update_attrs)
+
       assert %{"id" => ^id} = json_response(conn, 200)
 
       conn = get(conn, Routes.learnt_item_path(conn, :show, id))
@@ -82,7 +87,9 @@ defmodule LearntListWeb.LearntItemControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn, learnt_item: learnt_item} do
-      conn = put(conn, Routes.learnt_item_path(conn, :update, learnt_item), learnt_item: @invalid_attrs)
+      conn =
+        put(conn, Routes.learnt_item_path(conn, :update, learnt_item), learnt_item: @invalid_attrs)
+
       assert json_response(conn, 422)["errors"] != %{}
     end
   end
