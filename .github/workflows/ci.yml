@@ -27,6 +27,7 @@ jobs:
         mix deps.get
     - name: Run Tests & Quality checks
       run: |
+        mix format --check-formatted
         mix test.quality
         mix test
       env:

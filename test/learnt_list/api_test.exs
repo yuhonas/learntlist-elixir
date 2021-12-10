@@ -6,8 +6,18 @@ defmodule LearntList.ApiTest do
   describe "learnt_items" do
     alias LearntList.Api.LearntItem
 
-    @valid_attrs %{description: "some description", title: "some title", url: "some url", wikidata_id: "some wikidata_id"}
-    @update_attrs %{description: "some updated description", title: "some updated title", url: "some updated url", wikidata_id: "some updated wikidata_id"}
+    @valid_attrs %{
+      description: "some description",
+      title: "some title",
+      url: "some url",
+      wikidata_id: "some wikidata_id"
+    }
+    @update_attrs %{
+      description: "some updated description",
+      title: "some updated title",
+      url: "some updated url",
+      wikidata_id: "some updated wikidata_id"
+    }
     @invalid_attrs %{description: nil, title: nil, url: nil, wikidata_id: nil}
 
     def learnt_item_fixture(attrs \\ %{}) do
@@ -43,7 +53,10 @@ defmodule LearntList.ApiTest do
 
     test "update_learnt_item/2 with valid data updates the learnt_item" do
       learnt_item = learnt_item_fixture()
-      assert {:ok, %LearntItem{} = learnt_item} = Api.update_learnt_item(learnt_item, @update_attrs)
+
+      assert {:ok, %LearntItem{} = learnt_item} =
+               Api.update_learnt_item(learnt_item, @update_attrs)
+
       assert learnt_item.description == "some updated description"
       assert learnt_item.title == "some updated title"
       assert learnt_item.url == "some updated url"

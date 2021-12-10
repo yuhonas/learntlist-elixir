@@ -25,7 +25,6 @@ end
 
 # FIXME: Use a path relative to the running script
 File.stream!("priv/repo/seeds.csv")
-  |> Stream.drop(1)
-  |> CSV.decode(headers: [:title, :url, :inserted_at, :wikidata_id, :description])
-  |> Enum.each(&LearntList.Seeds.seed_from_csv/1)
-
+|> Stream.drop(1)
+|> CSV.decode(headers: [:title, :url, :inserted_at, :wikidata_id, :description])
+|> Enum.each(&LearntList.Seeds.seed_from_csv/1)
